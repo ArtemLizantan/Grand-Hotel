@@ -1,14 +1,15 @@
 import 'modern-normalize/modern-normalize.css';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
+import { ToastContainer } from 'react-toastify';
 import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
-import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import Layout from '@/components/Layout';
 import defaultMeta from '@/constants/meta';
-import paypalScriptOptions from '@/constants/paypalScriptOptions';
 import theme from '@/constants/theme';
+import Script from 'next/script';
+import 'react-toastify/dist/ReactToastify.css';
 
 // TODO: If you need animation, uncomment (site with animations https://michalsnik.github.io/aos/)
 
@@ -53,10 +54,13 @@ export default function MyApp(props: AppProps) {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Layout>
-          <PayPalScriptProvider options={paypalScriptOptions}>
-            <Component {...pageProps} />
-          </PayPalScriptProvider>
+          <Component {...pageProps} />
+          <Script
+            src='https://www.booking.com/affiliate/prelanding_sdk'
+            // strategy='beforeInteractive' // Вы можете изменить стратегию, если необходимо
+          />
         </Layout>
+        <ToastContainer />
       </ThemeProvider>
     </AppCacheProvider>
   );

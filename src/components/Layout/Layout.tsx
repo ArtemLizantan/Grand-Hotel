@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import CookieConsent from '@/components/CookiesConsent';
 // TODO: Uncomment after adding Header and Footer
-// import Footer from './Footer';
+import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import * as classes from './styles';
 
@@ -13,7 +13,7 @@ export default function Layout({ children }: Props) {
     <div css={classes.wrap}>
       <Header />
       <main css={classes.main}>{children}</main>
-      {/* <Footer /> */}
+      <Footer />
       <CookieConsent />
     </div>
   );

@@ -6,6 +6,11 @@ export const header = (theme: Theme) => css`
   display: flex;
   align-items: center;
   background-color: ${theme.palette.background.paper};
+  position: sticky;
+  z-index: 100000000;
+  top: 0;
+  left: 0;
+  width: 100%;
   @media (max-width: 768px) {
     min-height: 70px;
   }

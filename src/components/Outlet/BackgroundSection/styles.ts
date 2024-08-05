@@ -9,3 +9,15 @@ export const bgWrap = css`
   overflow: hidden;
   z-index: -1;
 `;
+
+export const content = (theme: Theme) => css`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export const body = (theme: Theme) => css`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;

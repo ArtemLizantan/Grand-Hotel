@@ -10,17 +10,34 @@ import Logo from '../Logo/Logo';
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
+  const [openSecondMenu, setOpenSecondMenu] = useState(false);
+
+  const handleMouseEnter = () => {
+    if (!isMobile) {
+      setOpenSecondMenu(true);
+    }
+  };
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      setOpenSecondMenu(false);
+    }
+  };
 
   const openBurger = () => {
     setIsMobileMenuOpen(true);
   };
 
   return (
-    <header css={classes.header}>
+    <header
+      onMouseLeave={handleMouseLeave}
+      css={classes.header}>
       <Container>
         <div css={classes.body}>
           <Logo />
           <Nav
+            openSecondMenu={openSecondMenu}
+            setOpenSecondMenu={setOpenSecondMenu}
+            onMouseEnter={handleMouseEnter}
             setOpenMenu={setIsMobileMenuOpen}
             openMobile={isMobileMenuOpen}
           />

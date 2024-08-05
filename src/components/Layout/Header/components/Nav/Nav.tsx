@@ -1,6 +1,5 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import { useState } from 'react';
 import Link from 'next/link';
 import CloseIcon from '@mui/icons-material/Close';
 import { useMediaQuery } from '@mui/material';
@@ -13,10 +12,18 @@ import { headerData } from '../../header.data';
 interface NavProps {
   openMobile: boolean;
   setOpenMenu: (open: boolean) => void; // изменено
+  onMouseEnter: () => void;
+  openSecondMenu: boolean;
+  setOpenSecondMenu: (open: boolean) => void;
 }
 
-export default function Nav({ openMobile, setOpenMenu }: NavProps) {
-  const [openSecondMenu, setOpenSecondMenu] = useState(false);
+export default function Nav({
+  openMobile,
+  setOpenMenu,
+  onMouseEnter,
+  openSecondMenu,
+  setOpenSecondMenu,
+}: NavProps) {
   const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
 
   const handleClose = () => {
@@ -69,6 +76,7 @@ export default function Nav({ openMobile, setOpenMenu }: NavProps) {
               <>
                 <div css={classes.dropdownWrap}>
                   <button
+                    onMouseEnter={onMouseEnter}
                     css={classes.buttonDrop}
                     onClick={() => name === 'DESTINATIONS' && setOpenSecondMenu((prev) => !prev)}
                     type='button'>

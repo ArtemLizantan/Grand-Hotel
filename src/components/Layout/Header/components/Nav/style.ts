@@ -80,7 +80,10 @@ export const secondMenu = (theme: Theme) => css`
   position: absolute;
   top: 130%;
   width: 100%;
+  z-index: 1000;
   border-radius: 20px;
+  padding: 10px 10px;
+  gap: 10px;
   @media (max-width: 991px) {
     position: fixed;
     background-color: ${theme.palette.text.secondary};
@@ -99,11 +102,17 @@ export const secondMenu = (theme: Theme) => css`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 55px;
+    height: 45px;
     color: ${theme.palette.text.primary};
     font-size: 14px;
-    &:not(:last-child) {
-      border-bottom: 1px solid;
+    transition: all 0.4s;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    @media (min-width: 991px) {
+      &:hover {
+        background-color: ${theme.palette.primary.main};
+        color: ${theme.palette.text.secondary};
+      }
     }
   }
 `;
@@ -147,6 +156,6 @@ export const arrowDropDownIcon = css`
     right: 50px;
     transform: rotate(-90deg);
     width: 30px;
-    height: 30px
+    height: 30px;
   }
 `;

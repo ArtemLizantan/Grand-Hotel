@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ['latin'] });
 const theme = createTheme({
   breakpoints: {
     values: {
-      xs: 0,
-      sm: 600,
+      xs: 556,
+      sm: 768,
       md: 991,
       lg: 1200,
       xl: 1536,
@@ -22,7 +22,7 @@ const theme = createTheme({
     //   selected: '',
     // },
     background: {
-      default: '#lightgray',
+      default: 'lightgray',
       paper: '#002c4b',
     },
     // divider: '',
@@ -31,11 +31,11 @@ const theme = createTheme({
       light: '#ffd012',
       dark: '',
     },
-    // secondary: {
-    //   main: '',
-    //   light: '',
-    //   dark: '',
-    // },
+    secondary: {
+      main: '#9f9f9f',
+      light: '#fff',
+      dark: '',
+    },
     // error: {
     //   main: '',
     //   light: '',
@@ -79,7 +79,20 @@ const theme = createTheme({
         variant: 'contained',
       },
       styleOverrides: {
-        root: {},
+        root: {
+          background: '#FD7B03',
+          color: 'white',
+          width: '100%',
+          fontSize: '24px',
+          fontWeight: '700',
+          textTransform: 'uppercase',
+          '&:hover': {
+            background: '#ffcc00',
+          },
+          '@media (max-width: 768px)': {
+            fontSize: '20px',
+          },
+        },
       },
     },
     MuiCssBaseline: {
