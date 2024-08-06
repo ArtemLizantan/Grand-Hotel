@@ -5,6 +5,12 @@ export const footer = (theme: Theme) => css`
   background: ${theme.palette.background.paper};
   color: ${theme.palette.text.secondary};
   padding: 60px 0;
+  a {
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      color: ${theme.palette.primary.main};
+    }
+  }
   ${theme.breakpoints.down('md')} {
     .MuiGrid-root {
       width: 100%;
@@ -77,7 +83,15 @@ export const copy = (theme: Theme) => css`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  a:not(:first-child) {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    transition: all 0.4s ease-in-out;
 
+    &:hover {
+      color: ${theme.palette.primary.main};
+    }
+  }
   ${theme.breakpoints.down('sm')} {
     flex-direction: column;
     gap: 20px;

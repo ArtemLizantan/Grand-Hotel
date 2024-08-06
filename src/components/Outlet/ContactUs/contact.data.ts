@@ -47,7 +47,7 @@ export const form: Form = {
     сheckbox: {
       label: 'Checkbox',
       name: 'Checkbox',
-      placeholder: 'Save my name, email, and website in this browser for the next time.',
+      placeholder: 'Save my name and e-mail in this browser for the next time.',
       validation: 'Required',
     },
     button: 'Submit',

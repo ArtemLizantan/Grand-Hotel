@@ -7,7 +7,7 @@ export const header = (theme: Theme) => css`
   align-items: center;
   background-color: ${theme.palette.background.paper};
   position: sticky;
-  z-index: 100000000;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;

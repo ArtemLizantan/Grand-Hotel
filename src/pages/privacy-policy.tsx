@@ -1,22 +1,10 @@
-// TODO: Import GetStaticProps
-// If you are not using GetStaticProps, the title will come from ./constants/meta.ts
-import { GetStaticProps } from 'next';
+import Privacy from '@/components/Outlet/PrivacyPolicy';
 
-export default function PrivacyPolicyPage() {
-  // TODO: Add components
-  return <div>Privacy Policy</div>;
+// TODO: Add Privacy Policy
+export default function PrivacyPolicy() {
+  return (
+    <section>
+      <Privacy />
+    </section>
+  );
 }
-
-// TODO: Add title and description
-export const getStaticProps: GetStaticProps = async () => {
-  const meta = {
-    title: '',
-    description: '',
-  };
-
-  return {
-    props: {
-      meta,
-    },
-  };
-};

@@ -9,9 +9,9 @@ export const subtitle = (theme: Theme) => css`
   margin: 0;
 
   ${theme.breakpoints.down('md')} {
-    font-size: 20px;
+    font-size: 20px !important;
   }
   ${theme.breakpoints.down('xs')} {
-    font-size: 16px;
+    font-size: 16px !important;
   }
 `;

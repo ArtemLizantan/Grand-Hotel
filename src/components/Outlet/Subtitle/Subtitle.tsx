@@ -3,14 +3,20 @@ import * as classes from './style';
 interface ISubtitleProps {
   text: string;
   color: string;
+  fontSize?: string;
 }
 
-export default function Subtitle({ text, color }: ISubtitleProps) {
+export default function Subtitle({ text, color, fontSize }: ISubtitleProps) {
   return (
-    <h2
-      style={{ color }}
-      css={classes.subtitle}>
-      {text}
-    </h2>
+    <h4
+      style={{ color, fontSize }}
+      css={classes.subtitle}
+      dangerouslySetInnerHTML={{ __html: text }}
+    />
   );
 }
+
+
+Subtitle.defaultProps = {
+  fontSize: null,
+};

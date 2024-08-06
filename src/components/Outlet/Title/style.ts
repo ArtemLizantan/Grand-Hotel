@@ -8,10 +8,10 @@ export const title = (theme: Theme) => css`
   text-align: center;
   margin: 0;
   ${theme.breakpoints.down('md')} {
-    font-size: 40px;
+    font-size: 40px !important;
   }
   ${theme.breakpoints.down('xs')} {
-    font-size: 24px;
+    font-size: 24px !important;
     line-height: 110%;
   }
 `;

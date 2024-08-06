@@ -133,11 +133,11 @@ export default function ContactUs() {
           <div css={classes.bottom}>
             <div css={classes.contacts}>
               <EmailIcon />
-              <span>plishlank@vemvme.com</span>
+              <span>Herengracht 315, 1016 AV Amsterdam, Netherlands</span>
             </div>
             <div css={classes.contacts}>
               <LocationOnIcon />
-              <span>mElcmelcmerlcm,p2mMdnecnec</span>
+              <a href='mailto:reservation@grand-hotel.com.ua'>reservation@grand-hotel.com.ua</a>
             </div>
           </div>
         </div>

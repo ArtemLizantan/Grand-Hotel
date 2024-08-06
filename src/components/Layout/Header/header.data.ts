@@ -9,7 +9,7 @@ interface SubNavItem {
 interface NavItem {
   id: number;
   name: string;
-  path?: string;
+  path?: URL | string;
   items?: SubNavItem[] | undefined;
 }
 
@@ -24,41 +24,60 @@ export const headerData: HeaderData = {
       name: 'Home ',
       path: ROUTER.HOME,
     },
+
     {
-      id: 2,
-      name: 'Contacts',
-      path: ROUTER.CONTACTS,
+      id: 4,
+      name: 'ABOUT US',
+      path: ROUTER.ABOUT_US,
     },
+
     {
       id: 3,
       name: 'DESTINATIONS',
       items: [
         {
           idItem: 1,
-          nameItem: 'ITALY',
-          pathItem: '/page/1',
+          nameItem: 'USA',
+          pathItem: '/usa',
         },
         {
           idItem: 2,
           nameItem: 'FRANCE',
-          pathItem: '/page/1',
+          pathItem: '/france',
         },
         {
           idItem: 3,
           nameItem: 'HUNGARY',
-          pathItem: '/page/1',
+          pathItem: '/hungary',
         },
       ],
     },
     {
-      id: 4,
-      name: 'ABOUT US',
-      path: ROUTER.ABOUT_US,
+      id: 5,
+      name: 'PAGES',
+      path: ROUTER.PAGES,
+      items: [
+        {
+          idItem: 1,
+          nameItem: 'Cookies',
+          pathItem: '/cookies',
+        },
+        {
+          idItem: 2,
+          nameItem: 'Privacy Policy',
+          pathItem: '/privacy-policy',
+        },
+        {
+          idItem: 3,
+          nameItem: 'Terms and Conditions',
+          pathItem: '/terms-and-conditions',
+        },
+      ],
     },
     {
-      id: 5,
-      name: 'Pages',
-      path: ROUTER.PAGES,
+      id: 2,
+      name: 'Contacts',
+      path: ROUTER.CONTACTS,
     },
   ],
 };

@@ -8,26 +8,11 @@ import { ThemeProvider } from '@mui/material/styles';
 import Layout from '@/components/Layout';
 import defaultMeta from '@/constants/meta';
 import theme from '@/constants/theme';
-import Script from 'next/script';
 import 'react-toastify/dist/ReactToastify.css';
-
-// TODO: If you need animation, uncomment (site with animations https://michalsnik.github.io/aos/)
-
-// import { useEffect } from 'react';
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
 
 export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props;
   const meta = pageProps.meta || defaultMeta;
-
-  // useEffect(() => {
-  //   AOS.init({
-  //     easing: 'ease-out-cubic',
-  //     once: true,
-  //     offset: 50,
-  //   });
-  // }, []);
 
   return (
     <AppCacheProvider {...props}>
@@ -55,10 +40,6 @@ export default function MyApp(props: AppProps) {
         <CssBaseline />
         <Layout>
           <Component {...pageProps} />
-          <Script
-            src='https://www.booking.com/affiliate/prelanding_sdk'
-            // strategy='beforeInteractive' // Вы можете изменить стратегию, если необходимо
-          />
         </Layout>
         <ToastContainer />
       </ThemeProvider>

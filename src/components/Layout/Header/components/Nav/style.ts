@@ -29,6 +29,7 @@ export const listItem = (theme: Theme) => css`
   font-size: 16px;
   text-transform: uppercase;
   color: ${theme.palette.text.secondary};
+
   @media (max-width: 991px) {
     a {
       display: flex;
@@ -79,7 +80,7 @@ export const secondMenu = (theme: Theme) => css`
   background-color: ${theme.palette.primary.light};
   position: absolute;
   top: 130%;
-  width: 100%;
+  width: 250px;
   z-index: 1000;
   border-radius: 20px;
   padding: 10px 10px;
@@ -106,8 +107,13 @@ export const secondMenu = (theme: Theme) => css`
     color: ${theme.palette.text.primary};
     font-size: 14px;
     transition: all 0.4s;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      ${theme.breakpoints.down('md')} {
+        border-bottom: 1px solid;
+      }
+    }
+
     @media (min-width: 991px) {
       &:hover {
         background-color: ${theme.palette.primary.main};
@@ -157,5 +163,13 @@ export const arrowDropDownIcon = css`
     transform: rotate(-90deg);
     width: 30px;
     height: 30px;
+  }
+`;
+
+export const link = (theme: Theme) => css`
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    color: ${theme.palette.primary.main};
   }
 `;

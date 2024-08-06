@@ -32,6 +32,6 @@ export const feedback = css`
   max-width: 500px;
 `;
 
-export const wrap = (theme: Theme) => css`
+export const wrap = () => css`
   max-width: 200px;
 `;

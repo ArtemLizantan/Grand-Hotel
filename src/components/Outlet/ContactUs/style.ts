@@ -166,7 +166,8 @@ export const contacts = (theme: Theme) => css`
   span {
     font-weight: 400;
     font-size: 16px;
-    max-width: 300px;
+    max-width: 250px;
     margin: 0 auto;
+    text-align: center;
   }
 `;

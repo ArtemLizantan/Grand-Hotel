@@ -21,8 +21,9 @@ export default function Items() {
             />
           </div>
           <div css={classes.bottom}>
-            {itemsData.items.map(({ id, title, img }) => (
+            {itemsData.items.map(({ id, title, img, href }) => (
               <Item
+                href={href}
                 key={id}
                 title={title}
                 img={img}

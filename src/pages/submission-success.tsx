@@ -1,22 +1,9 @@
-// TODO: Import GetStaticProps
-// If you are not using GetStaticProps, the title will come from ./constants/meta.ts
-import { GetStaticProps } from 'next';
+import SubmissionSuccess from '@/components/Outlet/SubmissionSucces';
 
 export default function SubmissionSuccessPage() {
-  // TODO: Add components
-  return <div>Submission Success</div>;
+  return (
+    <section>
+      <SubmissionSuccess />
+    </section>
+  );
 }
-
-// TODO: Add title and description
-export const getStaticProps: GetStaticProps = async () => {
-  const meta = {
-    title: '',
-    description: '',
-  };
-
-  return {
-    props: {
-      meta,
-    },
-  };
-};

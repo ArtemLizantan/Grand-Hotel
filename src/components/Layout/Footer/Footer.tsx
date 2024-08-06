@@ -1,12 +1,14 @@
-import { Grid, Link, Box, TextField, Button, Typography } from '@mui/material';
+import { Grid, Box, TextField, Button, Typography } from '@mui/material';
 import Container from '@/components/Outlet/Container';
 import { toast } from 'react-toastify';
 import EmailIcon from '@mui/icons-material/Email';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, FormikHelpers } from 'formik';
+import Link from 'next/link';
 import * as yup from 'yup';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import * as classes from './style';
 import Logo from '../Logo/Logo';
+import { footerData } from './footer.data';
 
 const INITIAL_FORM_VALUES = {
   email_newsletter: '',
@@ -16,8 +18,12 @@ const VALIDATION_SCHEMA = yup.object().shape({
   email_newsletter: yup.string().email('Invalid email address').required('Email is required'),
 });
 
+interface FormValues {
+  email_newsletter: string;
+}
+
 export default function Footer() {
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = (values: FormValues, { resetForm }: FormikHelpers<FormValues>) => {
     const notifySucsess = () => {
       toast.success('Thank you for subscribing!', {
         position: 'bottom-left',
@@ -59,7 +65,7 @@ export default function Footer() {
                     gap={2}
                     mb={2}>
                     <LocationOnIcon style={{ width: 30, height: 40 }} />
-                    <span>3rd Floor, 11-15 Dix’s Field, Exeter EX1 1QA, United Kingdom</span>
+                    <span>{footerData.adress}</span>
                   </Box>
                   <Box
                     display='flex'
@@ -67,9 +73,9 @@ export default function Footer() {
                     alignItems='center'>
                     <EmailIcon style={{ width: 30, height: 40 }} />
                     <Link
-                      href='mailto:info@grandpalaceresort.com'
+                      href='mailto:reservation@grand-hotel.com.ua'
                       color='inherit'>
-                      info@grandpalaceresort.com
+                      {footerData.email}
                     </Link>
                   </Box>
                 </div>
@@ -122,9 +128,9 @@ export default function Footer() {
           <Typography
             mt={{ xs: 3, sm: 0 }}
             textAlign={{ xs: 'center', sm: 'right' }}>
-            ©&nbsp;2024 GrandHotel All Rights Reserved. <br className='d-sm-none' />
+            ©&nbsp;2024 All Rights Reserved. <br className='d-sm-none' />
             <Link
-              href='/terms'
+              href='/terms-and-conditions'
               color='inherit'>
               Terms of Use
             </Link>

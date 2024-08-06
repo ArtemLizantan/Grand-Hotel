@@ -1,14 +1,19 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import * as classes from './style';
 
 interface IItemProps {
   img: string;
   title: string;
+  href: string;
 }
 
-export default function Item({ img, title }: IItemProps) {
+export default function Item({ img, title, href }: IItemProps) {
   return (
-    <div css={classes.item}>
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions, no-return-assign
+    <Link
+      href={href}
+      css={classes.item}>
       <div css={classes.body}>
         <div>
           <Image
@@ -22,6 +27,6 @@ export default function Item({ img, title }: IItemProps) {
           <h4>{title}</h4>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

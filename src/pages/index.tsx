@@ -1,29 +1,31 @@
-// TODO: Import GetStaticProps
-// If you are not using GetStaticProps, the title will come from ./constants/meta.ts
-import ContactUs from '@/components/Outlet/ContactUs/ContactUs';
-import Hero from '@/components/Outlet/Hero/Hero';
-import Items from '@/components/Outlet/Items/Items';
-import Preview from '@/components/Outlet/Preview/Preview';
-import Reviews from '@/components/Outlet/Reviews';
+import React, { Suspense } from 'react';
 import { GetStaticProps } from 'next';
+import Preloader from '@/components/Layout/Spinner/Spinner';
+
+// Динамический импорт компонентов
+const ContactUs = React.lazy(() => import('@/components/Outlet/ContactUs/ContactUs'));
+const Hero = React.lazy(() => import('@/components/Outlet/Hero/Hero'));
+const Items = React.lazy(() => import('@/components/Outlet/Items/Items'));
+const Preview = React.lazy(() => import('@/components/Outlet/Preview/Preview'));
+const Reviews = React.lazy(() => import('@/components/Outlet/Reviews'));
 
 export default function HomePage() {
   // TODO: Add components
   return (
-    <>
+    <Suspense fallback={<Preloader />}>
       <Hero />
       <Items />
       <Reviews />
       <Preview />
       <ContactUs />
-    </>
+    </Suspense>
   );
 }
 
 // TODO: Add title and description
 export const getStaticProps: GetStaticProps = async () => {
   const meta = {
-    title: '',
+    title: 'Grand Hotel | Main',
     description: '',
   };
 

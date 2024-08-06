@@ -1,3 +1,5 @@
+import ContactUsSection from '@/components/Outlet/ContactUsPage/ContactUsPage';
+
 export default function contacts() {
-  return <div>contacts</div>;
+  return <ContactUsSection />;
 }

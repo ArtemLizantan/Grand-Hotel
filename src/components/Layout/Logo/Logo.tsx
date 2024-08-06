@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import * as classes from './style';
 
-const logoPath = '/images/content/header/logo.svg';
+const logoPath = '/icons/header/logo.svg';
 
 export default function Logo() {
   return (
